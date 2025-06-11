@@ -15,7 +15,7 @@ class Translator
                 'target' => 'es',
                 'format' => 'text',
             ]);
-
+ 
             if ($response->successful()) {
                 return $response->json()['translatedText'];
             }

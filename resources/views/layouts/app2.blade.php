@@ -158,7 +158,7 @@
         
         
               <!-- Tenant Selector -->
-              @if(auth()->user()->tenants->count() > 1)
+              @if(auth()->user()->tenants->count() >= 1)
               @if(auth()->user()->role == 'Admin')
               <li class="nav-item">
                   <div class="nav-link">
@@ -342,7 +342,7 @@
      <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper " style="max-width: 100%; margin: auto;">
       <!-- Main content -->
-          <div class="container-fluid" style="max-width: 90%; margin: auto;">
+          <div class="container-fluid" style="max-width: 95%; margin: auto;">
               @yield('content')
           </div>
     

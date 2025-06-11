@@ -14,6 +14,7 @@ use App\Http\Controllers\HorarioDisponibleController;
 use App\Http\Controllers\OpenFoodFactsController;
 use App\Http\Controllers\RecipeController;
 use App\Http\Controllers\MealPlannerController;
+use App\Http\Controllers\FoodController;
 
 Route::get('/', function () {
     return view('auth.login');
@@ -177,6 +178,9 @@ Route::get('/menu/{id}/pdf', [WeeklyMenuController::class, 'generarPDF'])->name(
 //seguimientos
 Route::get('/citas/resumen/{user_id}', [CitaController::class, 'resumen'])->name('citas.resumen');
 
+Route::get('/foods', [FoodController::class, 'index'])->name('foods.index');
+Route::post('/foods', [FoodController::class, 'store'])->name('foods.store');
+Route::put('/foods/{food}', [FoodController::class, 'update'])->name('foods.update');
 
 });
 

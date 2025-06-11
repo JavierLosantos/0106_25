@@ -131,6 +131,7 @@ class HomeController extends Controller
     
         // Consultas dentro de la semana actual
         $consultas = Consulta::where('tenant_id', $tenant)
+        ->where('Revisado','0')
             ->whereBetween('created_at', [$startOfWeek, $endOfWeek])
             ->get();
     

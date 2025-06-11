@@ -196,6 +196,8 @@
         
 
           </li>
+           @if(auth()->user()->tenants->count() >= 1)
+                @if(auth()->user()->role == 'Admin')
           <li  class="nav-header ">
             Clientes
           </li>
@@ -230,10 +232,13 @@
             </ul>
         </li>
         
-
+   @endif
+                @endif
+     @if(auth()->user()->role == 'Admin')
         <li  class="nav-header ">
           Calendario
         </li>
+             
         <li class="nav-item has-treeview">
           <a href="#" class="nav-link">
               <i class="fas fa-fw fa-share "></i>
@@ -244,9 +249,9 @@
           </a>
          
                
-            
+        
           <ul class="nav nav-treeview pl-3 collapse">
-                @if(auth()->user()->role == 'Admin')
+            
               <li class="nav-item">
                 <a href="{{ url('citas-semanales')}}" class="nav-link">
                     <i class="fas fa-fw fa-user"></i>
@@ -259,7 +264,7 @@
                   <p> Horarios Disponibles</p>
               </a>
           </li>
-              @endif
+            
               <li class="nav-item">
                   <a href="{{ url('/calendario') }}" class="nav-link">
                       <i class="fas fa-calendar-check "></i>
@@ -269,6 +274,34 @@
              
           </ul>
       </li>
+       <li  class="nav-header ">
+          Maestro Productos
+        </li>
+             
+        <li class="nav-item has-treeview">
+          <a href="#" class="nav-link">
+              <i class="fas fa-fw fa-share "></i>
+              <p>
+                  Productos
+                  <i class="right fas fa-angle-left"></i>
+              </p>
+          </a>
+         
+               
+        
+          <ul class="nav nav-treeview pl-3 collapse">
+            
+              <li class="nav-item">
+                <a href="{{ url('foods')}}" class="nav-link">
+                    <i class="fas fa-fw fa-user"></i>
+                    <p>Productos</p>
+                </a>
+            </li>
+           
+             
+          </ul>
+      </li>
+        @endif
       @if(auth()->user()->role == 'Admin')
         <li  class="nav-header ">
                   Usuarios
@@ -353,7 +386,7 @@
      <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper " style="max-width: 100%; margin: auto;">
       <!-- Main content -->
-          <div class="container-fluid" style="max-width: 90%; margin: auto;">
+          <div class="container-fluid" style="max-width: 95%; margin: auto;">
               @yield('content')
           </div>
     
