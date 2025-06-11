@@ -1,0 +1,49 @@
+/* Estilo de la barra de navegación */
+.barra-navegacion {
+    background-color: #2E7D32; /* Verde oscuro */
+    width: 100%;
+    height: 45px;
+    position: -webkit-sticky; /* para navegadores WebKit */
+    position: sticky; /* para navegadores compatibles */
+    top: 0;
+    left: 0;
+    display:flex;
+    font-family: Kanit, 'Courier New', Courier, monospace;
+    z-index: 100;
+    margin: 0;
+}
+
+/* Estilo de la lista no ordenada */
+.barra-navegacion-img {
+    list-style-type: none;
+    padding: 0;
+    
+    width: 100%;
+}
+
+/* Estilo de los elementos de la lista */
+.barra-navegacion img {
+    height: 100%;
+    width: auto;
+    float: right;
+    
+    margin-right: 3%;
+}
+
+/* Estilo de los enlaces */
+.barra-navegacion a {
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+    
+}
+
+.barra-navegacion a i{
+  margin-left: 10px;
+    margin-top: 5px;
+}
+
+/* Cambio de color al pasar el cursor sobre los enlaces */
+.barra-navegacion a:hover {
+    background-color: #1B5E20; /* Verde más oscuro */
+}
