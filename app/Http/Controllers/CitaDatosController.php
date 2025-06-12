@@ -32,6 +32,7 @@ class CitaDatosController extends Controller
         return view('cita_datos.create', compact('cita','bonos','todosLosBonos'));
     }
 
+    
    public function store(Request $request, $citaId)
     {
         $cod_cita = $citaId;

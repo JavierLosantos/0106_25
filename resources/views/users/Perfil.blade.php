@@ -22,7 +22,7 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header text-center">
-                                <h3 class="card-title">Formulario de Edición de Usuario</h3>
+                                <h3 class="card-title">Formulario2 de Edición de Usuario</h3>
                             </div>
 
                             <div class="card-body">
@@ -175,7 +175,6 @@
                                     </div>
 
                                     <!-- Rol -->
-                                     @if(auth()->user()->role == 'Admin')
                                     <div class="input-group mb-3">
                                         <select name="role" class="form-control" {{ $resultados->role == 'Paciente' ? 'disabled' : '' }}>
                                             <option value="Paciente" {{ $resultados->role == 'Paciente' ? 'selected' : '' }}>Paciente</option>
@@ -187,10 +186,10 @@
                                             </div>
                                         </div>
                                         @error('role')
-                                            <span class="text-danger">{{ $message ?? "" }}</span>
+                                            <span class="text-danger">{{ $message }}</span>
                                         @enderror
                                     </div>
-                                    @endif
+
                                     <!-- Botón de Guardar Cambios -->
                                     <button type="submit" class="btn btn-block btn-flat btn-primary">
                                         <span class="fas fa-save"></span>

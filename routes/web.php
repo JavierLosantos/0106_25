@@ -36,6 +36,7 @@ Route::middleware('auth')->group(function () {
   Route::delete('tenants/{tenant}', [TenantController::class, 'destroy'])->name('tenants.destroy');
 
   //Usuarios
+  Route::get('/perfil', function() {return view('user.perfil'); })->name('users.Perfil');
 Route::get('/user/table', [App\Http\Controllers\HomeController::class, 'user'])->name('user.table')->Middleware();
 Route::get('/user/edit/{id}',[App\Http\Controllers\HomeController::class,'edit'])->name('users.edit')->Middleware();
 Route::get('/user/delete/{id}',[App\Http\Controllers\HomeController::class,'delete']);
